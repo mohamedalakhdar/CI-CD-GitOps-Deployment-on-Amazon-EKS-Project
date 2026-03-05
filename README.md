@@ -2,7 +2,7 @@
 
 ![alt text](image.gif)
 
-# CI Process 
+# CI Process Web & App
 
 Implemented a fully automated Continuous Integration (CI) pipeline using Jenkins.
 
