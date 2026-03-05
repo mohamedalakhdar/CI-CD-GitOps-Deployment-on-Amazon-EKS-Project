@@ -2,6 +2,30 @@
 
 ![alt text](image.gif)
 
+# CI Process 
+
+Implemented a fully automated Continuous Integration (CI) pipeline using Jenkins.
+
+Source code checkout from GitHub at the start of the pipeline.
+
+Prepared a clean workspace before each build to ensure consistency.
+
+Integrated SonarQube for static code analysis; the build proceeds only if the Quality Gate passes.
+
+Automatically installed all project dependencies during the pipeline.
+
+Conducted security scans with Trivy on the file system to detect vulnerabilities.
+
+Built a Docker image and pushed it automatically to Docker Hub.
+
+Performed Docker image scanning with Trivy to identify security issues.
+
+Finalized the pipeline with cleanup and post-build actions to maintain a stable CI environment.
+
+Jenkins sends a notification email upon pipeline completion to report the build status.
+
+# GitOps / CD process (ArgoCD & EKS)
+
 ### Step 1: IAM Configuration
 - Create a user `eks-admin` with `AdministratorAccess`.
 - Generate Security Credentials: Access Key and Secret Access Key.
@@ -73,3 +97,10 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 kubectl get deployment -n kube-system aws-load-balancer-controller
 kubectl apply -f full_stack_lb.yaml
 
+# Step 11: Deploy Backend, Frontend, Database
+
+### Cleanup
+- To delete the EKS cluster:
+``` shell
+eksctl delete cluster --name three-tier-cluster --region us-west-2
+```
