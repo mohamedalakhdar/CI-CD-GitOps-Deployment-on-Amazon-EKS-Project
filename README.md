@@ -99,7 +99,10 @@ kubectl apply -f full_stack_lb.yaml
 ```
 
 ### Step 11: Deploy Web-tier, App-tier, Database-tier
-
+''' 
+    shell
+'''
+    
 ### Cleanup
 - To delete the EKS cluster:
 ``` shell
